@@ -1,0 +1,36 @@
+server:
+  port:
+    8888
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dviz?serverTimezone=GMT%2B8&useSSL=false&characterEncoding=utf-8
+    username: root
+    password: 123456
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  redis:
+    host: 192.168.88.101
+    port: 6379
+    #Redis使用的数据库
+    database: 0
+    #连接超时事件毫秒
+    timeout: 18000
+    lettuce:
+      pool:
+        #连接池最大连接数
+        max-active: 20
+        #最大阻塞等待时间
+        max-idle: 5
+        #连接池最小空闲连接
+        min-idle: 0
+    password: 123456
